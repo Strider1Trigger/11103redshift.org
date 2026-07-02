@@ -59,12 +59,8 @@
   }
   .nav-logo {
     position: relative;
-    width: 120px; height: 44px;
-    background: rgba(255,255,255,0.08);
-    border: 1.5px dashed rgba(255,255,255,0.35);
-    border-radius: 6px;
+    width: 120px; height: 64px;
     display: flex; align-items: center; justify-content: center;
-    cursor: pointer;
     overflow: hidden;
   }
   .nav-logo span {
@@ -617,9 +613,8 @@
      ============================== -->
 <nav>
   <!-- DRAG YOUR LOGO HERE -->
-  <div class="nav-logo" id="nav-logo-zone" title="Click to upload team logo">
-    <span>Your Logo</span>
-    <input type="file" accept="image/*" onchange="previewImage(this,'nav-logo-zone')"/>
+  <div class="nav-logo" id="nav-logo-zone" style="cursor:default;pointer-events:none;">
+    <img src="images/RRB.png" alt="Team Logo" style="height:150%;width:auto;object-fit:contain;" />
   </div>
 
   <ul class="nav-links">
