@@ -378,14 +378,30 @@
   }
   .season-overlay {
     position: absolute; inset: 0;
-    background: rgba(0,0,0,0.55);
+    background: rgba(0,0,0,0.15);
+    cursor: pointer;
   }
+  .season-close-btn {
+    position: absolute;
+    top: -36px; right: 0;
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 22px;
+    cursor: pointer;
+    line-height: 1;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+  }
+  .season-close-btn:hover { opacity: 1; }
   .season-content {
     position: relative; z-index: 10;
     display: flex; flex-direction: column; align-items: center;
+    justify-content: flex-end;
     gap: 2rem;
     width: 100%;
     max-width: 900px;
+    padding-top: 60%;
   }
   .season-tag {
     font-family: var(--font-head);
@@ -408,6 +424,21 @@
   .season-video-wrap iframe {
     width: 100%; height: 100%;
   }
+  .btn-season-reveal {
+    background: transparent;
+    color: var(--white);
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 14px 36px;
+    border: 2px solid rgba(255,255,255,0.6);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .btn-season-reveal:hover { background: rgba(255,255,255,0.1); border-color: var(--white); }
 
   /* =============================================
      TEAM MEMBERS
@@ -817,16 +848,19 @@ teams at the Orlando Regional. We're just getting started.</p>
   <div class="season-bg" style="background-image: url('images/image23.jpg');"></div>
   <div class="season-overlay"></div>
   <div class="season-content">
-    <div class="season-tag">2027 Season</div>
-    <div class="season-video-wrap">
+    <div class="season-video-wrap" id="season-video" style="display:none;">
+      <button class="season-close-btn" onclick="closeSeasonReveal(event)">✕</button>
       <iframe
-        src="https://www.youtube.com/embed/boJWcbOxato"
+        id="season-iframe"
+        src=""
+        data-src="https://www.youtube.com/embed/boJWcbOxato?autoplay=1"
         title="FIRST CANOPY Season Reveal"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen>
       </iframe>
     </div>
+    <button class="btn-season-reveal" id="season-btn" onclick="playSeasonReveal()">FIRST CANOPY SEASON REVEAL</button>
   </div>
 </section>
 
@@ -1040,6 +1074,27 @@ teams at the Orlando Regional. We're just getting started.</p>
      JS: IMAGE PREVIEW
      ============================== -->
 <script>
+function playSeasonReveal() {
+  const video = document.getElementById('season-video');
+  const iframe = document.getElementById('season-iframe');
+  const btn = document.getElementById('season-btn');
+  iframe.src = iframe.dataset.src;
+  video.style.display = 'block';
+  btn.style.display = 'none';
+}
+
+function closeSeasonReveal(e) {
+  if (e) e.stopPropagation();
+  const video = document.getElementById('season-video');
+  const iframe = document.getElementById('season-iframe');
+  const btn = document.getElementById('season-btn');
+  iframe.src = '';
+  video.style.display = 'none';
+  btn.style.display = '';
+}
+
+document.querySelector('.season-overlay').addEventListener('click', closeSeasonReveal);
+
 function previewImage(input, zoneId) {
   if (!input.files || !input.files[0]) return;
   const zone = document.getElementById(zoneId);
