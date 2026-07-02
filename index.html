@@ -113,7 +113,8 @@
   .hero-photo-zone {
     position: absolute; inset: 0;
     opacity: 0.25;
-    cursor: pointer;
+    cursor: default;
+    pointer-events: none;
   }
   .hero-photo-zone input[type="file"] {
     position: absolute; inset: 0; opacity: 0; cursor: pointer; z-index: 5;
@@ -206,8 +207,8 @@
   .stats-strip {
     background: var(--primary);
     padding: 2rem 5rem;
-    display: flex; gap: 0; justify-content: space-around;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
   }
   .stat {
     text-align: center;
@@ -726,17 +727,11 @@ teams at the Orlando Regional. We're just getting started.</p>
   <div class="robot-grid">
 
     <!-- ROBOT CARD 1 -->
+     
     <div class="robot-card">
-      <div class="robot-img-zone" id="robot1" title="Click to upload robot photo">
-        <div class="photo-placeholder" style="min-height:220px;">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#9099be" stroke-width="1.5">
-            <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>
-            <polyline points="21 15 16 10 5 21"/>
-          </svg>
-          <p>Robot Photo</p>
-        </div>
-        <input type="file" accept="image/*" onchange="previewImage(this,'robot1')"/>
-        <span class="edit-label">📷 ROBOT</span>
+      <div class="robot-img-zone" id="robot1" style="cursor:default;pointer-events:none;">
+        <img src="images/robot.jpeg" class="preview-img" alt="Robot photo" />
+        <span class="edit-label">ROBOT</span>
       </div>
       <div class="robot-card-label">
         <h3 contenteditable="true">Robot Name</h3>
@@ -746,16 +741,9 @@ teams at the Orlando Regional. We're just getting started.</p>
 
     <!-- ROBOT CARD 2 -->
     <div class="robot-card">
-      <div class="robot-img-zone" id="robot2" title="Click to upload action photo">
-        <div class="photo-placeholder" style="min-height:220px;">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#9099be" stroke-width="1.5">
-            <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>
-            <polyline points="21 15 16 10 5 21"/>
-          </svg>
-          <p>Competition Photo</p>
-        </div>
-        <input type="file" accept="image/*" onchange="previewImage(this,'robot2')"/>
-        <span class="edit-label">📷 COMPETITION</span>
+      <div class="robot-img-zone" id="robot2" style="cursor:default;pointer-events:none;">
+        <img src="images/robotfield.jpeg" class="preview-img" alt="Competition photo" />
+        <span class="edit-label">COMPETITION</span>
       </div>
       <div class="robot-card-label">
         <h3 contenteditable="true">At Competition</h3>
@@ -765,16 +753,9 @@ teams at the Orlando Regional. We're just getting started.</p>
 
     <!-- ROBOT CARD 3 -->
     <div class="robot-card">
-      <div class="robot-img-zone" id="robot3" title="Click to upload build season photo">
-        <div class="photo-placeholder" style="min-height:220px;">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#9099be" stroke-width="1.5">
-            <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>
-            <polyline points="21 15 16 10 5 21"/>
-          </svg>
-          <p>Build Season Photo</p>
-        </div>
-        <input type="file" accept="image/*" onchange="previewImage(this,'robot3')"/>
-        <span class="edit-label">📷 BUILD SEASON</span>
+      <div class="robot-img-zone" id="robot3" style="cursor:default;pointer-events:none;">
+        <img src="images/workrobot.jpeg" class="preview-img" alt="Build season photo" />
+        <span class="edit-label">BUILD SEASON</span>
       </div>
       <div class="robot-card-label">
         <h3 contenteditable="true">Build Season</h3>
@@ -945,7 +926,7 @@ teams at the Orlando Regional. We're just getting started.</p>
     <h2 contenteditable="true">Ready to build<br>something great?</h2>
     <p style="margin-top:0.75rem;color:rgba(0,0,0,0.6);" contenteditable="true">Join our team — open to all high school students. No experience needed, just curiosity.</p>
   </div>
-  <a href="mailto:team@yourdomain.com" class="btn-dark" contenteditable="false">Join Our Team →</a>
+  <a href="redshiftrobo@gmail.com" class="btn-dark" contenteditable="false">Join Our Team →</a>
 </section>
 
 
@@ -959,7 +940,7 @@ teams at the Orlando Regional. We're just getting started.</p>
         <span>Logo</span>
         <input type="file" accept="image/*" onchange="previewImage(this,'footer-logo')"/>
       </div>
-      <p style="font-size:0.875rem;line-height:1.6;" contenteditable="true">FRC Team 11103 · Redshift Robotics<br>Wesley Chapel, Florida · team@yourdomain.com</p>
+      <p style="font-size:0.875rem;line-height:1.6;" contenteditable="true">FRC Team 11103 · Redshift Robotics<br>Wesley Chapel, Florida · redshiftrobo@gmail.com</p>
     </div>
     <div>
       <h4>Navigation</h4>
@@ -973,7 +954,7 @@ teams at the Orlando Regional. We're just getting started.</p>
     <div>
       <h4>Connect</h4>
       <ul>
-        <li><a href="#" contenteditable="true">Instagram</a></li>
+        <li><a href="https://www.instagram.com/11103redshift/" contenteditable="true">Instagram</a></li>
         <li><a href="#" contenteditable="true">YouTube</a></li>
         <li><a href="#" contenteditable="true">Facebook</a></li>
         <li><a href="https://www.thebluealliance.com" target="_blank">The Blue Alliance</a></li>
@@ -983,7 +964,7 @@ teams at the Orlando Regional. We're just getting started.</p>
   <div class="footer-bottom">
     <span contenteditable="true">© 2025 FRC Team #XXXX — All rights reserved</span>
     <div class="social-links">
-      <a href="#">Instagram</a>
+      <a href="">Instagram</a>
       <a href="#">YouTube</a>
       <a href="#">TBA</a>
     </div>
