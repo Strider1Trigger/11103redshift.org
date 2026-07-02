@@ -367,15 +367,14 @@
      ============================================= */
   .season-reveal {
     position: relative;
-    padding: 6rem 5rem;
     display: flex; align-items: center; justify-content: center;
-    min-height: 600px;
     overflow: hidden;
   }
   .season-bg {
     position: absolute; inset: 0;
-    background-size: cover;
-    background-position: center;
+  }
+  .season-bg img {
+    width: 100%; height: 100%; object-fit: contain;
   }
   .season-overlay {
     position: absolute; inset: 0;
@@ -846,7 +845,7 @@ teams at the Orlando Regional. We're just getting started.</p>
      SEASON REVEAL
      ============================== -->
 <section class="season-reveal" id="season">
-  <div class="season-bg" style="background-image: url('images/image23.jpg');"></div>
+  <div class="season-bg"><img src="images/image23.jpg" alt="Season reveal" /></div>
   <div class="season-overlay"></div>
   <div class="season-content">
     <div class="season-video-wrap" id="season-video" style="display:none;">
@@ -1139,3 +1138,5 @@ document.querySelectorAll('[id]').forEach(zone => {
 
 </body>
 </html>
+
+
