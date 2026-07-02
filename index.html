@@ -362,6 +362,54 @@
   }
 
   /* =============================================
+     SEASON REVEAL
+     ============================================= */
+  .season-reveal {
+    position: relative;
+    padding: 6rem 5rem;
+    display: flex; align-items: center; justify-content: center;
+    min-height: 600px;
+    overflow: hidden;
+  }
+  .season-bg {
+    position: absolute; inset: 0;
+    background-size: cover;
+    background-position: center;
+  }
+  .season-overlay {
+    position: absolute; inset: 0;
+    background: rgba(0,0,0,0.55);
+  }
+  .season-content {
+    position: relative; z-index: 10;
+    display: flex; flex-direction: column; align-items: center;
+    gap: 2rem;
+    width: 100%;
+    max-width: 900px;
+  }
+  .season-tag {
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--secondary);
+    background: rgba(255,255,255,0.1);
+    padding: 6px 18px;
+    border-radius: 3px;
+  }
+  .season-video-wrap {
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+  }
+  .season-video-wrap iframe {
+    width: 100%; height: 100%;
+  }
+
+  /* =============================================
      TEAM MEMBERS
      ============================================= */
   .team-section {
@@ -758,6 +806,27 @@ teams at the Orlando Regional. We're just getting started.</p>
       </div>
     </div>
 
+  </div>
+</section>
+
+
+<!-- ==============================
+     SEASON REVEAL
+     ============================== -->
+<section class="season-reveal" id="season">
+  <div class="season-bg" style="background-image: url('images/image23.jpg');"></div>
+  <div class="season-overlay"></div>
+  <div class="season-content">
+    <div class="season-tag">2027 Season</div>
+    <div class="season-video-wrap">
+      <iframe
+        src="https://www.youtube.com/embed/boJWcbOxato"
+        title="FIRST CANOPY Season Reveal"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
   </div>
 </section>
 
