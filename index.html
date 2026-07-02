@@ -377,12 +377,17 @@
   }
   .season-content {
     position: absolute !important;
-    bottom: 2rem;
+    bottom: 0.5vw;
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
     display: flex; flex-direction: column; align-items: center;
     gap: 1rem;
+  }
+  @media (min-width: 900px) {
+    .season-content {
+      bottom: 0.6vw;
+    }
   }
   .season-overlay {
     position: absolute; inset: 0;
@@ -406,10 +411,10 @@
     position: relative; z-index: 10;
     display: flex; flex-direction: column; align-items: center;
     justify-content: flex-end;
-    gap: 2rem;
+    gap: 0.3vw;
     width: 100%;
     max-width: 900px;
-    padding-top: 20%;
+    padding-top: 0.3vw;
   }
   .season-tag {
     font-family: var(--font-head);
@@ -423,7 +428,12 @@
     border-radius: 3px;
   }
   .season-video-wrap {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     width: 100%;
+    max-width: 900px;
     aspect-ratio: 16/9;
     border-radius: 8px;
     overflow: hidden;
@@ -434,20 +444,41 @@
   }
   .season-layer-img {
     width: auto;
-    max-width: 500px;
+    max-width: none;
     height: auto;
     display: block;
     pointer-events: none;
+  }
+  .season-layer-img.season-bio {
+    position: relative;
+    top: 1.2vw;
+    width: 19.9vw;
+  }
+  .season-layer-img.season-canopy {
+    width: 27.3vw;
+  }
+  @media (min-width: 900px) {
+    .season-content {
+      gap: 0.5vw;
+      padding-top: 0.6vw;
+    }
+    .season-layer-img.season-bio {
+      top: 1.8vw;
+      width: 24.4vw;
+    }
+    .season-layer-img.season-canopy {
+      width: 33.3vw;
+    }
   }
   .btn-season-reveal {
     background: transparent;
     color: var(--white);
     font-family: var(--font-head);
     font-weight: 700;
-    font-size: 15px;
+    font-size: clamp(11px, 1.05vw, 15px);
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    padding: 14px 36px;
+    padding: clamp(8px, 1vw, 14px) clamp(20px, 2.5vw, 36px);
     border: 2px solid rgba(255,255,255,0.6);
     border-radius: 4px;
     cursor: pointer;
@@ -863,8 +894,8 @@ teams at the Orlando Regional. We're just getting started.</p>
   <div class="season-bg"><img src="images/bgcanopy.png" alt="Season background" /></div>
   <div class="season-overlay"></div>
   <div class="season-content">
-    <img src="images/biocore.png" class="season-layer-img" style="position: relative; top: 50px; width: clamp(180px, 27.8vw, 400px);" alt="BIOCORE" />
-    <img src="images/canopy.png" class="season-layer-img" style="width: clamp(220px, 38.2vw, 550px);" alt="FIRST CANOPY" />
+    <img src="images/biocore.png" class="season-layer-img season-bio" alt="BIOCORE" />
+    <img src="images/canopy.png" class="season-layer-img season-canopy" alt="FIRST CANOPY" />
     <div class="season-video-wrap" id="season-video" style="display:none;">
       <button class="season-close-btn" onclick="closeSeasonReveal(event)">✕</button>
       <iframe
@@ -1097,7 +1128,7 @@ function playSeasonReveal() {
   const btn = document.getElementById('season-btn');
   iframe.src = iframe.dataset.src;
   video.style.display = 'block';
-  btn.style.display = 'none';
+  btn.style.visibility = 'hidden';
 }
 
 function closeSeasonReveal(e) {
@@ -1107,7 +1138,7 @@ function closeSeasonReveal(e) {
   const btn = document.getElementById('season-btn');
   iframe.src = '';
   video.style.display = 'none';
-  btn.style.display = '';
+  btn.style.visibility = '';
 }
 
 document.querySelector('.season-overlay').addEventListener('click', closeSeasonReveal);
