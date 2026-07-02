@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
@@ -8,7 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet"/>
 <style>
   /* =============================================
-     🎨 TEAM COLORS — CHANGE THESE TO YOUR COLORS
+     ðŸŽ¨ TEAM COLORS â€” CHANGE THESE TO YOUR COLORS
      ============================================= */
   :root {
     --primary:   #4b0404;   /* Main team color */
@@ -402,7 +402,7 @@
     gap: 2rem;
     width: 100%;
     max-width: 900px;
-    padding-top: 65%;
+    padding-top: 20%;
   }
   .season-tag {
     font-family: var(--font-head);
@@ -719,7 +719,7 @@
   </div>
 
   <div class="hero-content">
-    <div class="hero-tag">FRC Team #11103 · Wesley Chapel, Florida</div>
+    <div class="hero-tag">FRC Team #11103 Â· Wesley Chapel, Florida</div>
     <h1>
       <span>Redshift</span><br>
       <span>Robotics</span>
@@ -778,7 +778,7 @@ teams at the Orlando Regional. We're just getting started.</p>
       <p>Team Photo</p>
     </div>
     <input type="file" accept="image/*" onchange="previewImage(this,'about-photo')"/>
-    <span class="edit-label">📷 TEAM PHOTO</span>
+    <span class="edit-label">ðŸ“· TEAM PHOTO</span>
   </div>
 
   <!-- TEXT RIGHT SIDE -->
@@ -810,7 +810,7 @@ teams at the Orlando Regional. We're just getting started.</p>
       </div>
       <div class="robot-card-label">
         <h3>Robot Name</h3>
-        <p>2025 FRC season — click to edit description</p>
+        <p>2025 FRC season â€” click to edit description</p>
       </div>
     </div>
 
@@ -850,7 +850,7 @@ teams at the Orlando Regional. We're just getting started.</p>
   <div class="season-overlay"></div>
   <div class="season-content">
     <div class="season-video-wrap" id="season-video" style="display:none;">
-      <button class="season-close-btn" onclick="closeSeasonReveal(event)">✕</button>
+      <button class="season-close-btn" onclick="closeSeasonReveal(event)">âœ•</button>
       <iframe
         id="season-iframe"
         src=""
@@ -1023,9 +1023,9 @@ teams at the Orlando Regional. We're just getting started.</p>
 <section class="cta-banner" id="join">
   <div>
     <h2>Ready to build<br>something great?</h2>
-    <p style="margin-top:0.75rem;color:rgba(0,0,0,0.6);">Join our team — open to all high school students. No experience needed, just curiosity.</p>
+    <p style="margin-top:0.75rem;color:rgba(0,0,0,0.6);">Join our team â€” open to all high school students. No experience needed, just curiosity.</p>
   </div>
-  <a href="redshiftrobo@gmail.com" class="btn-dark" contenteditable="false">Join Our Team →</a>
+  <a href="redshiftrobo@gmail.com" class="btn-dark" contenteditable="false">Join Our Team â†’</a>
 </section>
 
 
@@ -1039,7 +1039,7 @@ teams at the Orlando Regional. We're just getting started.</p>
         <span>Logo</span>
         <input type="file" accept="image/*" onchange="previewImage(this,'footer-logo')"/>
       </div>
-      <p style="font-size:0.875rem;line-height:1.6;">FRC Team 11103 · Redshift Robotics<br>Wesley Chapel, Florida · redshiftrobo@gmail.com</p>
+      <p style="font-size:0.875rem;line-height:1.6;">FRC Team 11103 Â· Redshift Robotics<br>Wesley Chapel, Florida Â· redshiftrobo@gmail.com</p>
     </div>
     <div>
       <h4>Navigation</h4>
@@ -1061,7 +1061,7 @@ teams at the Orlando Regional. We're just getting started.</p>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2025 FRC Team #XXXX — All rights reserved</span>
+    <span>Â© 2025 FRC Team #XXXX â€” All rights reserved</span>
     <div class="social-links">
       <a href="">Instagram</a>
       <a href="#">YouTube</a>
@@ -1109,7 +1109,7 @@ function previewImage(input, zoneId) {
     }
     img.src = e.target.result;
     zone.classList.add('has-image');
-    // For sponsor cards — hide text
+    // For sponsor cards â€” hide text
     const span = zone.querySelector('span');
     if (span) span.style.display = 'none';
   };
