@@ -175,21 +175,6 @@
     transition: opacity 0.2s, transform 0.15s;
   }
   .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
-  .btn-outline {
-    background: transparent;
-    color: var(--white);
-    font-family: var(--font-head);
-    font-weight: 600;
-    font-size: 15px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 13px 32px;
-    border-radius: 4px;
-    text-decoration: none;
-    border: 2px solid rgba(255,255,255,0.4);
-    transition: border-color 0.2s, color 0.2s;
-  }
-  .btn-outline:hover { border-color: var(--secondary); color: var(--secondary); }
 
   /* =============================================
      STATS STRIP
@@ -297,63 +282,6 @@
     transition: border-color 0.2s;
   }
   .about-text p[contenteditable]:focus { border-color: var(--secondary); }
-
-  /* =============================================
-     ROBOT REVEAL SECTION
-     ============================================= */
-  .robot-section {
-    padding: 6rem 5rem;
-    background: var(--light);
-    text-align: center;
-  }
-  .robot-section h2 {
-    font-family: var(--font-head);
-    font-weight: 900;
-    font-size: 3rem;
-    text-transform: uppercase;
-    color: var(--primary);
-    margin-bottom: 3.5rem;
-  }
-  .robot-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-  .robot-card {
-    position: relative;
-    background: var(--white);
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 24px rgba(26,46,110,0.08);
-  }
-  .robot-img-zone {
-    position: relative;
-    height: 220px;
-    overflow: hidden;
-    cursor: pointer;
-  }
-  .robot-img-zone input[type="file"] {
-    position: absolute; inset: 0; opacity: 0; z-index: 5; cursor: pointer;
-  }
-  .robot-card-label {
-    padding: 1.2rem;
-    text-align: left;
-  }
-  .robot-card-label h3 {
-    font-family: var(--font-head);
-    font-weight: 700;
-    font-size: 1.1rem;
-    color: var(--primary);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-  .robot-card-label p {
-    font-size: 0.875rem;
-    color: #666;
-    margin-top: 4px;
-  }
 
   /* =============================================
      SEASON REVEAL
@@ -683,11 +611,10 @@
   @media (max-width: 900px) {
     .about { grid-template-columns: 1fr; }
     .about-text { padding: 3rem; }
-    .robot-grid { grid-template-columns: 1fr 1fr; }
     .nav-links { display: none; }
     .hero-content { padding: 0 2rem; }
     .stats-strip { padding: 2rem; }
-    .sponsors-section, .team-section, .robot-section,
+    .sponsors-section, .team-section,
     footer { padding: 3rem 2rem; }
     .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
   }
@@ -706,7 +633,6 @@
 
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
-    <li><a href="#robot">Robot</a></li>
     <li><a href="#team">Team</a></li>
     <li><a href="#sponsors">Sponsors</a></li>
   </ul>
@@ -737,7 +663,6 @@ season competing in the 2026 FRC REBUILT challenge, we placed 26th out of 58
 teams at the Orlando Regional. We're just getting started.</p>
     <div class="btn-group">
       <a href="#about" class="btn-primary" contenteditable="false">Meet the Team</a>
-      <a href="#robot" class="btn-outline" contenteditable="false">See Our Robot</a>
     </div>
   </div>
 </section>
@@ -794,56 +719,6 @@ teams at the Orlando Regional. We're just getting started.</p>
     <p>We are FRC Team 11103, founded in 2025. Our team is made up of high school students from Wiregrass Ranch High School who share a passion for robotics, engineering, and STEM education.</p>
     <p>Every year we design, build, and program a robot from scratch in just a handful weeks to compete in FIRST Robotics Competition events. Beyond the robot, we are committed to outreach and inspiring the next generation of engineers.</p>
     <p>Our values: Gracious Professionalism, teamwork, and excellence in everything we build.</p>
-  </div>
-</section>
-
-
-<!-- ==============================
-     ROBOT REVEAL / GALLERY
-     ============================== -->
-<section class="robot-section" id="robot">
-  <div class="section-tag" style="color:var(--primary);">2025 Season</div>
-  <h2>Meet the Robot</h2>
-
-  <div class="robot-grid">
-
-    <!-- ROBOT CARD 1 -->
-     
-    <div class="robot-card">
-      <div class="robot-img-zone" id="robot1" style="cursor:default;pointer-events:none;">
-        <img src="images/robot.jpeg" class="preview-img" alt="Robot photo" />
-        <span class="edit-label">ROBOT</span>
-      </div>
-      <div class="robot-card-label">
-        <h3>Robot Name</h3>
-        <p>2025 FRC season â€” click to edit description</p>
-      </div>
-    </div>
-
-    <!-- ROBOT CARD 2 -->
-    <div class="robot-card">
-      <div class="robot-img-zone" id="robot2" style="cursor:default;pointer-events:none;">
-        <img src="images/robotfield.jpeg" class="preview-img" alt="Competition photo" />
-        <span class="edit-label">COMPETITION</span>
-      </div>
-      <div class="robot-card-label">
-        <h3>At Competition</h3>
-        <p>Competing at [event name, location]</p>
-      </div>
-    </div>
-
-    <!-- ROBOT CARD 3 -->
-    <div class="robot-card">
-      <div class="robot-img-zone" id="robot3" style="cursor:default;pointer-events:none;">
-        <img src="images/workrobot.jpeg" class="preview-img" alt="Build season photo" />
-        <span class="edit-label">BUILD SEASON</span>
-      </div>
-      <div class="robot-card-label">
-        <h3>Build Season</h3>
-        <p>6 weeks of design, build, and program</p>
-      </div>
-    </div>
-
   </div>
 </section>
 
@@ -1041,8 +916,7 @@ teams at the Orlando Regional. We're just getting started.</p>
       <h4>Navigation</h4>
       <ul>
         <li><a href="#about">About</a></li>
-        <li><a href="#robot">Robot</a></li>
-        <li><a href="#team">Team</a></li>
+            <li><a href="#team">Team</a></li>
         <li><a href="#sponsors">Sponsors</a></li>
       </ul>
     </div>
